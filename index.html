@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upoznaj Sebe – Psihoterapija</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #111010;
+      --white: #faf9f7;
+      --mid: #7a7672;
+      --line: #d8d4cf;
+      --accent: #2a2825;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      background: rgba(250,249,247,0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .nav-sub {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      display: block;
+      margin-top: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav ul a {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    nav ul a:hover { opacity: 0.45; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 5rem;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 5rem 6rem 3rem;
+      animation: fadeUp 1.1s ease both;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 2.2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 5.2rem);
+      font-weight: 300;
+      line-height: 1.08;
+      color: var(--black);
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--mid);
+      max-width: 38ch;
+      margin-bottom: 3rem;
+    }
+
+    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .btn-primary:hover { background: var(--mid); }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      border: 1px solid var(--black);
+      color: var(--black);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .btn-outline:hover { background: var(--black); color: var(--white); }
+
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1.4s ease both 0.3s;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.05);
+      display: block;
+    }
+
+    .hero-image-caption {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.5;
+      max-width: 28ch;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0 3rem;
+      margin: 5rem 0 0;
+    }
+
+    .divider-line { flex: 1; height: 1px; background: var(--line); }
+
+    .divider-text {
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--mid);
+      white-space: nowrap;
+    }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 7rem 3rem; }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.12;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em { font-style: italic; }
+
+    .section-body {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--mid);
+      max-width: 55ch;
+    }
+
+    /* ── SERVICES GRID ── */
+    #usluge { background: var(--white); }
+
+    .services-header {
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+    }
+
+    .services-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+    }
+
+    .service-card {
+      padding: 3.5rem 2.8rem;
+      border-right: 1px solid var(--line);
+      position: relative;
+      transition: background 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .service-card:last-child { border-right: none; }
+    .service-card:hover { background: var(--black); }
+    .service-card:hover .service-num,
+    .service-card:hover .service-name,
+    .service-card:hover .service-desc,
+    .service-card:hover .service-cta { color: var(--white); }
+    .service-card:hover .service-line { background: var(--white); }
+
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      color: var(--mid);
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+
+    .service-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.85rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .service-name em { font-style: italic; }
+
+    .service-line {
+      width: 2.5rem;
+      height: 1px;
+      background: var(--black);
+      margin-bottom: 1.5rem;
+      transition: background 0.3s;
+    }
+
+    .service-desc {
+      font-size: 0.88rem;
+      line-height: 1.85;
+      color: var(--mid);
+      margin-bottom: 2.5rem;
+      transition: color 0.3s;
+    }
+
+    .service-cta {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--black);
+      transition: color 0.3s;
+    }
+
+    /* ── RADIONICA FEATURE ── */
+    #radionica {
+      background: var(--black);
+      color: var(--white);
+      padding: 0;
+    }
+
+    .radionica-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+    }
+
+    .radionica-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .radionica-image-bg {
+      width: 100%;
+      height: 100%;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 500px;
+    }
+
+    .radionica-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      padding: 4rem;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    .radionica-text {
+      padding: 6rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .radionica-text .section-label { color: rgba(255,255,255,0.4); }
+
+    .radionica-text .section-title { color: var(--white); }
+
+    .radionica-text .section-body { color: rgba(255,255,255,0.55); }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.5rem 1.1rem;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.65);
+    }
+
+    .btn-white {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: opacity 0.25s;
+    }
+
+    .btn-white:hover { opacity: 0.8; }
+
+    /* ── PROGRAM ── */
+    #program { background: var(--white); }
+
+    .program-header {
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+    }
+
+    .program-steps {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .step {
+      padding: 3rem 2rem 3rem 0;
+      border-right: 1px solid var(--line);
+      padding-right: 2rem;
+    }
+
+    .step:first-child { padding-left: 0; }
+    .step:last-child { border-right: none; }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--line);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .step-body {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--mid);
+    }
+
+    /* ── INDIVIDUALNI RAD ── */
+    #individualni {
+      background: #f2f0ed;
+    }
+
+    .ind-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .ind-list {
+      list-style: none;
+      margin: 2.5rem 0 3rem;
+    }
+
+    .ind-list li {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--mid);
+      display: flex;
+      gap: 1rem;
+    }
+
+    .ind-list li::before {
+      content: '—';
+      color: var(--black);
+      flex-shrink: 0;
+    }
+
+    .ind-visual {
+      position: relative;
+    }
+
+    .ind-frame {
+      background: var(--black);
+      padding: 4rem;
+      color: var(--white);
+    }
+
+    .ind-frame-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    .ind-frame-attr {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ── TESTIMONIALS ── */
+    #svedocanstva {
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .test-header {
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+    }
+
+    .test-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--line);
+    }
+
+    .test-card {
+      background: var(--white);
+      padding: 3rem 2.5rem;
+    }
+
+    .test-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--line);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .test-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--black);
+      margin-bottom: 2rem;
+    }
+
+    .test-name {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    /* ── KONTAKT ── */
+    #kontakt {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 9rem 3rem;
+    }
+
+    #kontakt .section-label { color: rgba(255,255,255,0.35); margin-bottom: 1.5rem; }
+
+    #kontakt .section-title { color: var(--white); margin-bottom: 1.5rem; }
+
+    #kontakt .section-body {
+      color: rgba(255,255,255,0.5);
+      margin: 0 auto 3.5rem;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid #222;
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.25);
+    }
+
+    footer a {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--white); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.5rem; }
+      nav ul { display: none; }
+
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-text { padding: 5rem 1.5rem 3rem; }
+      .hero-image { height: 60vw; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { border-right: none; border-bottom: 1px solid var(--line); }
+      .service-card:last-child { border-bottom: none; }
+
+      .radionica-inner { grid-template-columns: 1fr; }
+      .radionica-text { padding: 4rem 1.5rem; }
+      .radionica-image-bg { min-height: 300px; }
+
+      .program-header { grid-template-columns: 1fr; gap: 2rem; }
+      .program-steps { grid-template-columns: 1fr 1fr; }
+      .step { border-right: none; border-bottom: 1px solid var(--line); padding: 2.5rem 0; }
+
+      .ind-inner { grid-template-columns: 1fr; gap: 3rem; }
+
+      .test-grid { grid-template-columns: 1fr; }
+
+      section { padding: 5rem 1.5rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      Upoznaj Sebe
+      <span class="nav-sub">upoznajsebe.com</span>
+    </a>
+    <ul>
+      <li><a href="#usluge">Usluge</a></li>
+      <li><a href="#radionica">Radionica</a></li>
+      <li><a href="#program">Program</a></li>
+      <li><a href="#individualni">Individualni rad</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="pocetna">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Relaciona transakciona analiza · Beograd</p>
+      <h1>Mesto gde se <em>srećeš</em><br>sa sobom.</h1>
+      <p class="hero-desc">
+        Psihoterapijski prostor posvećen istraživanju unutrašnjeg sveta — 
+        dečjih obrazaca koji upravljaju odraslim životima, 
+        i nežnom povratku sebi.
+      </p>
+      <div class="btn-group">
+        <a href="#usluge" class="btn-primary">Istraži usluge</a>
+        <a href="#kontakt" class="btn-outline">Zakaži razgovor</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <!-- Placeholder — zameniti sa tvojom fotografijom -->
+      <div style="width:100%;height:100%;min-height:100vh;background:linear-gradient(160deg,#2a2825 0%,#111010 100%);display:flex;align-items:center;justify-content:center;">
+        <div style="text-align:center;padding:3rem;">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:2rem;">Tvoja fotografija ovde</p>
+          <p class="hero-image-caption" style="position:static;font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-style:italic;color:rgba(255,255,255,0.75);line-height:1.5;max-width:28ch;">
+            „Odrasla osoba koja je stalno anksiozna bila je dete koje je živelo u strahu."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider reveal">
+    <div class="divider-line"></div>
+    <span class="divider-text">Šta nudimo</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- USLUGE -->
+  <section id="usluge">
+    <div class="services-header reveal">
+      <p class="section-label">Načini rada</p>
+      <h2 class="section-title">Tri puta<br><em>ka sebi.</em></h2>
+    </div>
+    <div class="services-grid reveal">
+
+      <a href="#radionica" class="service-card">
+        <p class="service-num">01</p>
+        <h3 class="service-name">Uvodna<br><em>radionica</em></h3>
+        <div class="service-line"></div>
+        <p class="service-desc">
+          Kratka, intenzivna iskustvena radionica za sve koji žele da se upoznaju 
+          sa psihoterapijskim radom pre nego što se odluče za dublji korak.
+        </p>
+        <span class="service-cta">Saznaj više →</span>
+      </a>
+
+      <a href="#program" class="service-card">
+        <p class="service-num">02</p>
+        <h3 class="service-name">Program<br><em>Povratak sebi</em></h3>
+        <div class="service-line"></div>
+        <p class="service-desc">
+          Višemesečni strukturisani program koji te vodi kroz istraživanje ego stanja, 
+          dečjih obrazaca i relacijskih potreba — ka slobodnijoj verziji sebe.
+        </p>
+        <span class="service-cta">Saznaj više →</span>
+      </a>
+
+      <a href="#individualni" class="service-card">
+        <p class="service-num">03</p>
+        <h3 class="service-name">Individualni<br><em>terapijski rad</em></h3>
+        <div class="service-line"></div>
+        <p class="service-desc">
+          Jednoindividualni psihoterapijski prostor sa našim terapeutima, 
+          prilagođen tvojim tempu, potrebama i životnoj priči.
+        </p>
+        <span class="service-cta">Saznaj više →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- RADIONICA FEATURE -->
+  <section id="radionica" style="padding:0;">
+    <div class="radionica-inner">
+      <div class="radionica-image">
+        <div class="radionica-image-bg">
+          <p class="radionica-quote">
+            „Dete koje je moralo da bude jako — danas može da se odmori."
+          </p>
+        </div>
+      </div>
+      <div class="radionica-text reveal">
+        <p class="section-label">Uvodna radionica</p>
+        <h2 class="section-title">Dete koje je<br><em>moralo da...</em></h2>
+        <p class="section-body" style="color:rgba(255,255,255,0.55);margin-top:1rem;">
+          Iskustvena grupna radionica koja te uvodi u svet relacione transakcione analize. 
+          Kroz vođenu fantaziju, grupni proces i teoriju ego stanja, 
+          upoznaješ obrazce koji te vode kroz odrasli život.
+        </p>
+        <div class="tags">
+          <span class="tag">Grupni format</span>
+          <span class="tag">Online / Uživo</span>
+          <span class="tag">2–3 sata</span>
+          <span class="tag">Dete ego stanje</span>
+          <span class="tag">Relacione potrebe</span>
+        </div>
+        <a href="#kontakt" class="btn-white">Prijavi se na radionicu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM POVRATAK SEBI -->
+  <section id="program">
+    <div class="program-header reveal">
+      <div>
+        <p class="section-label">Program</p>
+        <h2 class="section-title">Povratak<br><em>sebi</em></h2>
+      </div>
+      <p class="section-body">
+        Strukturisano putovanje od prepoznavanja obrazaca 
+        do nežnog prihvatanja i integracije. 
+        Svaki korak je osmišljen da te vodi dublje — 
+        tačno onakvim tempom koji ti odgovara.
+      </p>
+    </div>
+
+    <div class="program-steps reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Prepoznavanje</h3>
+        <p class="step-body">Ego stanja, introjektovane poruke roditelja i adaptivne strategije iz detinjstva.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Razumevanje</h3>
+        <p class="step-body">Relacione potrebe po Erskinu, somatski odgovori i emocionalni obrasci u vezama.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Prihvatanje</h3>
+        <p class="step-body">Reparenting, granice, zabranjene emocije i susret sa slobodnim detetom u sebi.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3 class="step-title">Integracija</h3>
+        <p class="step-body">Sinteza puta, izlazak iz skripte i nošenje novog razumevanja u svakodnevni život.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:4rem;" class="reveal">
+      <a href="#kontakt" class="btn-primary">Saznaj više o programu</a>
+    </div>
+  </section>
+
+  <!-- INDIVIDUALNI RAD -->
+  <section id="individualni">
+    <div class="ind-inner">
+      <div class="reveal">
+        <p class="section-label">Individualni terapijski rad</p>
+        <h2 class="section-title">Tvoj prostor.<br><em>Tvoj tempo.</em></h2>
+        <p class="section-body">
+          Individualna psihoterapija unutar relacionog TA okvira — 
+          prostor koji se prilagođava tebi, a ne obrnuto.
+        </p>
+        <ul class="ind-list">
+          <li>Rad sa unutrašnjim detetom i ranim relacionim iskustvima</li>
+          <li>Istraživanje ego stanja i skriptnih obrazaca</li>
+          <li>Intergeneracionalna i kolektivna trauma</li>
+          <li>Podrška u kriznim životnim trenucima</li>
+          <li>Dugotrajni psihoterapijski rad ili kratka podrška</li>
+        </ul>
+        <a href="#kontakt" class="btn-primary">Zakaži uvodnu sesiju</a>
+      </div>
+      <div class="ind-visual reveal">
+        <div class="ind-frame">
+          <p class="ind-frame-quote">
+            „Nisi polomljen. Naučio si da preživiš. 
+            Sad možeš da naučiš da živiš."
+          </p>
+          <p class="ind-frame-attr">— Upoznaj Sebe, psihoterapija</p>
+        </div>
+        <div style="background:var(--line);height:1px;margin:2rem 0;"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+          <div style="padding:1.5rem;border:1px solid var(--line);">
+            <p style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;margin-bottom:0.3rem;">50 min</p>
+            <p style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--mid);">Trajanje sesije</p>
+          </div>
+          <div style="padding:1.5rem;border:1px solid var(--line);">
+            <p style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;margin-bottom:0.3rem;">Online</p>
+            <p style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--mid);">Uživo · Beograd</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SVEDOČANSTVA -->
+  <section id="svedocanstva">
+    <div class="test-header reveal">
+      <p class="section-label">Iskustva klijenata</p>
+      <h2 class="section-title">Šta kažu<br><em>oni koji su bili ovde.</em></h2>
+    </div>
+    <div class="test-grid reveal">
+      <div class="test-card">
+        <div class="test-mark">"</div>
+        <p class="test-text">
+          Po prvi put sam razumela zašto se ponašam onako kako se ponašam. 
+          Ne kao greška, nego kao nešto što je imalo smisla kada sam bila mala.
+        </p>
+        <p class="test-name">— M. K., 34</p>
+      </div>
+      <div class="test-card">
+        <div class="test-mark">"</div>
+        <p class="test-text">
+          Radionica mi je otvorila vrata koja nisam znala da postoje. 
+          Nastavila sam sa individualnim radom i osećam se kao da sam konačno kod kuće u sebi.
+        </p>
+        <p class="test-name">— J. P., 28</p>
+      </div>
+      <div class="test-card">
+        <div class="test-mark">"</div>
+        <p class="test-text">
+          Program „Povratak sebi" je najvrednije što sam ikada učinila za sebe. 
+          Preporučila bih ga svakome ko se oseća izgubljeno u sopstvenom životu.
+        </p>
+        <p class="test-name">— A. S., 41</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <p class="section-label">Kontakt</p>
+    <h2 class="section-title" style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:300;line-height:1.1;margin-bottom:1.5rem;color:var(--white);">
+      Spreman/a za<br><em>prvi korak?</em>
+    </h2>
+    <p class="section-body" style="color:rgba(255,255,255,0.45);margin:0 auto 3.5rem;">
+      Pošalji poruku ili nas pronađi na Instagramu — odgovaramo u roku od 24 sata.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:hello@upoznajsebe.com" class="btn-white">Pošalji email</a>
+      <a href="https://instagram.com/upoznajsebe_psihoterapija" target="_blank" class="btn-outline" style="border-color:rgba(255,255,255,0.3);color:var(--white);">Instagram →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Upoznaj Sebe · Psihoterapija · Beograd</p>
+    <div style="display:flex;gap:2rem;">
+      <a href="https://instagram.com/upoznajsebe_psihoterapija">@upoznajsebe_psihoterapija</a>
+      <a href="mailto:hello@upoznajsebe.com">hello@upoznajsebe.com</a>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
