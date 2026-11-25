@@ -858,6 +858,17 @@ footer {
   .koren-block { padding-top: 3rem; }
   .koren-offer { padding: 1.5rem; }
 }
+/* PROSTOR */
+.nav-right { display: flex; align-items: center; gap: 1.6rem; }
+.nav-login { color: inherit; font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; opacity: .85; }
+.nav-login:hover { opacity: 1; }
+#main-nav.on-hero .nav-login { color: var(--white); }
+.price-alt { font-family: var(--sans); font-size: 0.85rem; letter-spacing: 0.04em; margin: -0.3rem 0 0.8rem; opacity: .8; }
+.enroll-date-text { font-size: 1rem !important; line-height: 1.6; }
+.kutak-note { margin-top: 1.4rem; font-size: 0.95rem; opacity: .85; }
+@media (max-width: 900px) {
+  .nav-right .nav-login { display: inline-block; padding: 0.5rem 0.9rem; border: 1px solid currentColor; }
+}
 </style>
 </head>
 <body>
@@ -868,9 +879,13 @@ footer {
     <li><a href="#o-meni">O meni</a></li>
     <li><a href="#povratak-sebi">Povratak sebi</a></li>
     <li><a href="#koren-anksioznosti">Koren anksioznosti</a></li>
+    <li><a href="#kutak">Kutak</a></li>
     <li><a href="#vodjena-fantazija">Relaksacija za novac</a></li>
   </ul>
-  <a href="#povratak-sebi" class="nav-cta">Programi</a>
+  <div class="nav-right">
+    <a href="https://upoznajsebe.com/upoznajsebe.com-soba/" class="nav-login">Uđi u Prostor</a>
+    <a href="https://upoznajsebe.com/upoznajsebe.com-soba/#/ponuda" class="nav-cta">Pridruži se</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -884,7 +899,7 @@ footer {
     <div class="hero-ctas">
       <a href="#povratak-sebi" class="btn-light">Program Povratak sebi</a>
       <a href="#koren-anksioznosti" class="btn-ghost-light">Koren anksioznosti</a>
-      <a href="#vodjena-fantazija" class="btn-ghost-light">Rad sa novcem</a>
+      <a href="#kutak" class="btn-ghost-light">Kutak</a>
     </div>
   </div>
 
@@ -893,7 +908,7 @@ footer {
 <!-- INTRO STRIP -->
 <div class="intro-strip">
   <div class="reveal">
-    <p>Sve što si naučio o sebi - kako voliš, kako se štitis, čega se plašiš - naučio si davno, kao dete. Ovde razmotavamo te stare obrasce i gradimo <em>nešto novo.</em></p>
+    <p>Sve što si naučio o sebi - kako voliš, kako se štitiš, čega se plašiš - naučio si davno, kao dete. Ovde razmotavamo te stare obrasce i gradimo <em>nešto novo.</em></p>
   </div>
 </div>
 
@@ -924,46 +939,46 @@ footer {
 <!-- POVRATAK SEBI -->
 <section class="povratak" id="povratak-sebi">
   <div class="section-inner">
-    <p class="eyebrow reveal">Godišnji program</p>
+    <p class="eyebrow reveal">Program u osam modula</p>
     <h2 class="section-title reveal">Povratak sebi</h2>
     <div class="povratak-top">
-      <div class="program-lead reveal">Osmomesečni program unutrašnjeg rada koji te vodi kroz najvažnija pitanja o tome ko si, odakle dolaziš i kako to oblikuje svaki tvoj odnos danas.</div>
+      <div class="program-lead reveal">Program unutrašnjeg rada od osam modula koji te vodi kroz najvažnija pitanja o tome ko si, odakle dolaziš i kako to oblikuje svaki tvoj odnos danas.</div>
       <div class="program-body reveal reveal-d1">
-        <p>Program je samostalan - radiš sopstvenim tempom, bez rokova i bez pritiska. Svaki modul donosi video materijale i vođeni radni list za dublji lični rad.</p>
+        <p>Program je samostalan - radiš sopstvenim tempom, bez rokova i bez pritiska. Svaki modul donosi video, radnu svesku i vođenu fantaziju za dublji lični rad.</p>
         <p>Ne možeš preskočiti korak zato što svaki naredni modul gradi na prethodnom. Ali možeš ići polako, vraćati se, ponavljati koliko god puta treba.</p>
       </div>
     </div>
     <div class="povratak-bottom">
       <div class="reveal">
-        <p class="modules-label">Moduli programa 2026/2027</p>
+        <p class="modules-label">Moduli programa</p>
         <ul class="module-list">
-          <li class="module-item"><span class="module-month">Sep</span><span class="module-name">Ko je unutrašnje dete?</span></li>
-          <li class="module-item"><span class="module-month">Okt</span><span class="module-name">Drajveri i strategije preživljavanja</span></li>
-          <li class="module-item"><span class="module-month">Nov</span><span class="module-name">Skriptna uverenja iz detinjstva</span></li>
-          <li class="module-item"><span class="module-month">Feb</span><span class="module-name">Relacione potrebe</span></li>
-          <li class="module-item"><span class="module-month">Mar</span><span class="module-name">Unutrašnje dete u vezama</span></li>
-          <li class="module-item"><span class="module-month">Apr</span><span class="module-name">Kontakt sa unutrašnjim detetom</span></li>
-          <li class="module-item"><span class="module-month">Maj</span><span class="module-name">Žalovanje i puštanje</span></li>
-          <li class="module-item"><span class="module-month">Jun</span><span class="module-name">Novi odnos prema sebi</span></li>
+          <li class="module-item"><span class="module-month">01</span><span class="module-name">Ko je unutrašnje dete?</span></li>
+          <li class="module-item"><span class="module-month">02</span><span class="module-name">Drajveri i strategije preživljavanja</span></li>
+          <li class="module-item"><span class="module-month">03</span><span class="module-name">Skriptna uverenja iz detinjstva</span></li>
+          <li class="module-item"><span class="module-month">04</span><span class="module-name">Relacione potrebe</span></li>
+          <li class="module-item"><span class="module-month">05</span><span class="module-name">Unutrašnje dete u vezama</span></li>
+          <li class="module-item"><span class="module-month">06</span><span class="module-name">Kontakt sa unutrašnjim detetom</span></li>
+          <li class="module-item"><span class="module-month">07</span><span class="module-name">Žalovanje i puštanje</span></li>
+          <li class="module-item"><span class="module-month">08</span><span class="module-name">Novi odnos prema sebi</span></li>
         </ul>
       </div>
       <div class="enroll-card reveal reveal-d1">
-        <p class="enroll-tag">Samostalni pristup</p>
-        <p class="enroll-price">30 EUR</p>
-        <p class="enroll-price-note">mesečno &nbsp;·&nbsp; otkaži kad god želiš</p>
+        <p class="enroll-tag">Program u celosti</p>
+        <p class="enroll-price">299 €</p>
+        <p class="enroll-price-note">ili 8 rata po 40 €</p>
         <div class="enroll-features">
-          <div class="enroll-feature"><span class="feature-dot"></span>8 modula unutrašnjeg rada (sep - jun)</div>
-          <div class="enroll-feature"><span class="feature-dot"></span>Video materijali + radni listovi</div>
-          <div class="enroll-feature"><span class="feature-dot"></span>Isporuka putem Google Drive-a</div>
-          <div class="enroll-feature"><span class="feature-dot"></span>Sopstveni tempo, bez rokova</div>
-          <div class="enroll-feature"><span class="feature-dot"></span>Otkaži pretplatu u bilo kom trenutku</div>
+          <div class="enroll-feature"><span class="feature-dot"></span>8 video modula unutrašnjeg rada</div>
+          <div class="enroll-feature"><span class="feature-dot"></span>8 radnih sveski i 8 vođenih fantazija</div>
+          <div class="enroll-feature"><span class="feature-dot"></span>Pristup programu 3 godine</div>
+          <div class="enroll-feature"><span class="feature-dot"></span>6 meseci Kutka na poklon</div>
+          <div class="enroll-feature"><span class="feature-dot"></span>Sve na jednom mestu, u Prostoru Upoznaj Sebe</div>
         </div>
         <div class="enroll-date-box">
-          <p class="enroll-date-label">Sledeći upis</p>
-          <p class="enroll-date-value">Januar 2027.</p>
+          <p class="enroll-date-label">Kako se otvara</p>
+          <p class="enroll-date-value enroll-date-text">Uplatom u celosti dobijaš svih 8 modula odmah. Na rate se otvara po jedan modul sa svakom uplatom.</p>
         </div>
-        <a href="https://www.instagram.com/upoznajsebe_psihoterapija/" target="_blank" class="enroll-cta">Prati za obaveštenje o upisu</a>
-        <p class="enroll-footnote">Mesta su ograničena.<br>Prijava se otvara na Instagramu.</p>
+        <a href="https://upoznajsebe.com/upoznajsebe.com-soba/#/ponuda/povratak" class="enroll-cta">Pridruži se</a>
+        <p class="enroll-footnote">Plaćanje karticom preko Polar platforme.<br>Ulaz u Prostor stiže na mejl odmah posle uplate.</p>
       </div>
     </div>
   </div>
@@ -987,10 +1002,11 @@ footer {
         <div class="koren-offer">
           <p class="koren-offer-title">Program za produbljivanje rada na sebi</p>
           <p class="koren-offer-text">Znaš svoje obrasce, možda ideš i na terapiju, a nemir se i dalje vraća. Ovde ideš korak dalje: do perioda u kom je nastao i do onoga što ti je tada trebalo.</p>
-          <p class="koren-price">129€</p>
-          <p class="koren-price-sub">Devet modula, Dnevnik korena, vođena fantazija i trajni pristup</p>
-          <a href="https://payhip.com/b/zUuBh" target="_blank" rel="noopener" class="fc-cta">Kupi program</a>
-          <p class="fc-note">Sigurna kupovina putem Payhip platforme.<br>Pristup programu stiže na mejl odmah posle kupovine.</p>
+          <p class="koren-price">229 €</p>
+          <p class="price-alt">ili 4 rate po 60 €</p>
+          <p class="koren-price-sub">Devet modula, Dnevnik korena, vođena fantazija, 3 godine pristupa i 6 meseci Kutka na poklon</p>
+          <a href="https://upoznajsebe.com/upoznajsebe.com-soba/#/ponuda/koren" class="fc-cta">Pridruži se</a>
+          <p class="fc-note">Plaćanje karticom preko Polar platforme.<br>Ulaz u Prostor stiže na mejl odmah posle uplate.</p>
         </div>
       </div>
     </div>
@@ -1034,7 +1050,9 @@ footer {
           <div class="koren-include"><p class="koren-include-title">Test korena</p><p>Pokazuje koji moduli su za tebe trenutno najvažniji, pa znaš gde da zastaneš duže.</p></div>
           <div class="koren-include"><p class="koren-include-title">Mapa pojmova</p><p>Kad naiđeš na pojam koji ne razumeš, ovde ga nađeš objašnjenog jednostavnim rečima.</p></div>
           <div class="koren-include"><p class="koren-include-title">Pismo sa uputstvom</p><p>Objašnjava kako da koristiš program, korak po korak, i šta da uradiš ako ti tokom rada postane previše.</p></div>
-          <div class="koren-include"><p class="koren-include-title">Trajni pristup</p><p>Program ostaje tvoj, bez roka. Vraćaš se modulu koji ti je potreban kad se isti obrazac javi u novom odnosu ili na novom poslu.</p></div>
+          <div class="koren-include"><p class="koren-include-title">Tri godine pristupa</p><p>Program je tvoj tri godine od kupovine. Vraćaš se modulu koji ti je potreban kad se isti obrazac javi u novom odnosu ili na novom poslu.</p></div>
+          <div class="koren-include"><p class="koren-include-title">6 meseci Kutka na poklon</p><p>Uz program dobijaš i Kutak: svakog meseca novi video, tekstovi i vežbe.</p></div>
+          <div class="koren-include"><p class="koren-include-title">Plaćanje u celosti ili na rate</p><p>Uplatom u celosti otvaraš svih devet modula odmah. Na rate se moduli otvaraju postepeno, sa svakom uplatom.</p></div>
           <div class="koren-include"><p class="koren-include-title">Jedna stručna konsultacija mejlom</p><p>Možeš jednom da mi pišeš sa pitanjem vezanim za svoj proces u programu.</p></div>
           <div class="koren-include"><p class="koren-include-title">10% popusta na individualne seanse</p><p>Važi za seanse online i uživo, ako ti posle programa zatreba podrška.</p></div>
       </div>
@@ -1076,16 +1094,53 @@ footer {
       <div class="koren-offer koren-offer-end">
           <p class="koren-offer-title">Program za produbljivanje rada na sebi</p>
           <p class="koren-offer-text">Znaš svoje obrasce, možda ideš i na terapiju, a nemir se i dalje vraća. Ovde ideš korak dalje: do perioda u kom je nastao i do onoga što ti je tada trebalo.</p>
-          <p class="koren-price">129€</p>
-          <p class="koren-price-sub">Devet modula, Dnevnik korena, vođena fantazija i trajni pristup</p>
-          <a href="https://payhip.com/b/zUuBh" target="_blank" rel="noopener" class="fc-cta">Kupi program</a>
-          <p class="fc-note">Sigurna kupovina putem Payhip platforme.<br>Pristup programu stiže na mejl odmah posle kupovine.</p>
+          <p class="koren-price">229 €</p>
+          <p class="price-alt">ili 4 rate po 60 €</p>
+          <p class="koren-price-sub">Devet modula, Dnevnik korena, vođena fantazija, 3 godine pristupa i 6 meseci Kutka na poklon</p>
+          <a href="https://upoznajsebe.com/upoznajsebe.com-soba/#/ponuda/koren" class="fc-cta">Pridruži se</a>
+          <p class="fc-note">Plaćanje karticom preko Polar platforme.<br>Ulaz u Prostor stiže na mejl odmah posle uplate.</p>
         </div>
       <p class="koren-disclaimer">Koren anksioznosti je edukativni program za samostalan rad. Nije psihoterapija, ne postavlja dijagnozu i ne zamenjuje rad sa stručnjakom. Ako ti je sada veoma teško, potraži podršku stručnjaka uživo.</p>
     </div>
   </div>
 </section>
 
+<!-- KUTAK -->
+<section class="povratak" id="kutak">
+  <div class="section-inner">
+    <p class="eyebrow reveal">Mesečno članstvo</p>
+    <h2 class="section-title reveal">Kutak</h2>
+    <div class="povratak-top">
+      <div class="program-lead reveal">Svakog meseca jedan novi video, tekstovi koje čitaš kad ti zatreba i vežba kroz koju svoju priču razumeš korak po korak.</div>
+      <div class="program-body reveal reveal-d1">
+        <p>Na Instagramu vidiš deo. U Kutku ideš dublje, svojim tempom i bez obaveze. Ako jednog meseca nemaš vremena, sve te čeka kad se vratiš.</p>
+        <p>Kutak je deo Prostora Upoznaj Sebe, mesta gde su svi tvoji materijali na jednom mestu. Uz Koren anksioznosti i Povratak sebi dobijaš ga na poklon na 6 meseci.</p>
+      </div>
+    </div>
+    <div class="povratak-bottom">
+      <div class="reveal">
+        <p class="modules-label">Šta te čeka svakog meseca</p>
+        <ul class="module-list">
+          <li class="module-item"><span class="module-month">01</span><span class="module-name">Novi video na jednu temu</span></li>
+          <li class="module-item"><span class="module-month">02</span><span class="module-name">Tekstovi za pomoć i samopomoć</span></li>
+          <li class="module-item"><span class="module-month">03</span><span class="module-name">Vežba za rad na svojoj priči</span></li>
+        </ul>
+      </div>
+      <div class="enroll-card reveal reveal-d1">
+        <p class="enroll-tag">Kutak</p>
+        <p class="enroll-price">19 €</p>
+        <p class="enroll-price-note">mesečno &nbsp;·&nbsp; otkaži kad god želiš</p>
+        <div class="enroll-features">
+          <div class="enroll-feature"><span class="feature-dot"></span>Jedan novi video svakog meseca</div>
+          <div class="enroll-feature"><span class="feature-dot"></span>Tekstovi i vežbe</div>
+          <div class="enroll-feature"><span class="feature-dot"></span>Sve na jednom mestu, u Prostoru</div>
+        </div>
+        <a href="https://upoznajsebe.com/upoznajsebe.com-soba/#/ponuda/mesecna-soba" class="enroll-cta">Pridruži se</a>
+        <p class="enroll-footnote">Plaćanje karticom preko Polar platforme.<br>Ulaz u Prostor stiže na mejl odmah posle uplate.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- VODJENA FANTAZIJA -->
 <section class="fantazija" id="vodjena-fantazija">
@@ -1107,8 +1162,8 @@ footer {
             sa onim što već postoji u tebi, i o tome da mu dozvoliš da se pomakne.
           </p>
           <p>
-            Slušaš snimak, pratiš vođenje, i dozvoljaš da telo i um rade zajedno. 
-            Uz snimak dobijаš i PDF uputstvo za korišćenje.
+            Slušaš snimak, pratiš vođenje, i dozvoljavaš da telo i um rade zajedno. 
+            Uz snimak dobijaš i PDF uputstvo za korišćenje.
           </p>
         </div>
 
@@ -1123,7 +1178,7 @@ footer {
           </div>
           <div class="fantazija-feature">
             <span class="ff-dot"></span>
-            Trenutni digitalni download
+            Snimak te čeka u Prostoru
           </div>
           <div class="fantazija-feature">
             <span class="ff-dot"></span>
@@ -1146,14 +1201,15 @@ footer {
             <p class="fc-includes-label">Uključeno</p>
             <p class="fc-includes-item">✦ &nbsp;Audio snimak</p>
             <p class="fc-includes-item">✦ &nbsp;PDF uputstvo</p>
-            <p class="fc-includes-item">✦ &nbsp;Digitalni download</p>
+            <p class="fc-includes-item">✦ &nbsp;Pristup u Prostoru</p>
           </div>
-          <a href="https://payhip.com/b/OhWoZ" target="_blank" class="fc-cta">
-            Kupi odmah
+          <p class="koren-price">15 €</p>
+          <a href="https://upoznajsebe.com/upoznajsebe.com-soba/#/ponuda/relaksacija-novac" class="fc-cta">
+            Kupi snimak
           </a>
           <p class="fc-note">
-            Sigurna kupovina putem Payhip platforme.<br>
-            Download link stiže odmah na mejl.
+            Plaćanje karticom preko Polar platforme.<br>
+            Ulaz u Prostor stiže na mejl odmah posle uplate.
           </p>
         </div>
       </div>
@@ -1172,7 +1228,9 @@ footer {
     <li><a href="#o-meni">O meni</a></li>
     <li><a href="#povratak-sebi">Povratak sebi</a></li>
     <li><a href="#koren-anksioznosti">Koren anksioznosti</a></li>
+    <li><a href="#kutak">Kutak</a></li>
     <li><a href="#vodjena-fantazija">Relaksacija za novac</a></li>
+    <li><a href="https://upoznajsebe.com/upoznajsebe.com-soba/">Uđi u Prostor</a></li>
     <li><a href="https://www.instagram.com/upoznajsebe_psihoterapija/" target="_blank">Instagram</a></li>
   </ul>
   <p class="footer-copy">© 2026 Milica Bilbija &nbsp;·&nbsp; Upoznaj Sebe</p>
